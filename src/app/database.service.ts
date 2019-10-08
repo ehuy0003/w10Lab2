@@ -41,5 +41,9 @@ export class DatabaseService {
     let url = "/movies/" + id;
     return this.http.delete(url, httpOptions);
   }
+  deleteBefore(aYear) {
+    let url = "/deleteBefore/" + aYear;
+    return this.http.delete(url, httpOptions);
+  }
 
 }

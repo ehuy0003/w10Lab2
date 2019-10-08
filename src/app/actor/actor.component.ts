@@ -83,6 +83,14 @@ export class ActorComponent implements OnInit {
     });
   }
 
+  //Task 3: Delete before aYear
+  onDeleteBefore() {
+    let aYear = this.aYear;
+    this.dbService.deleteBefore(aYear).subscribe(results => {
+      this.onGetMovies();
+    });
+  }
+
   // This lifecycle callback function will be invoked with the component get initialized by Angular.
   ngOnInit() {
     this.onGetActors();

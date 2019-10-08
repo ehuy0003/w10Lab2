@@ -93,4 +93,14 @@ module.exports = {
             }
         });
     },
+
+    //Week 10 Lab 9 
+    //Task 3: Delete before aYear
+    deleteBefore: function (req, res){
+        let y = parseInt(req.params.y);
+        Movie.deleteMany({ year:{$lte:y}}, function (err, movies) {
+            if (err) return res.status(400).json(err);
+            else res.json(movies);
+        });
+    },
 }
