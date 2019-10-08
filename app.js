@@ -66,3 +66,8 @@ app.get('/actorsnew', actors.getAllNew);
 //Q8 New Get All Movies Method
 app.get('/moviesnew', movies.getAllNew);
 
+//Week 10 Lab 9 
+//Task 3: Delete before aYear
+app.delete('/deleteBefore/:y', movies.deleteBefore);
+
+
