@@ -122,11 +122,19 @@
         </tr>
         <tr *ngFor="let item of moviesDB">
           <td>{{item.title}}</td>
-          <td>{{item.mYear}}</td>
+          <td>{{item.year}}</td>
           <td><button type="submit" class="btn btn-primary" (click)="onDeleteMovie(item)">Delete</button></td>
         </tr>
       </table>
     </div>
+  <!-- Section 7: Delete Movie Before aYear -->
+  <div class="section" *ngIf="section==7">
+    <div class="form-group">
+      <label for="aYear">Delete Movie Before Year</label>
+      <input type="number" class="form-control" id="aYear" [(ngModel)]="aYear">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="onDeleteMovieBefore()">Delete</button>
+  </div>
   <!-- Section 9: Display all in a tble -->
   <div class="section" *ngIf="section==9">
     <table class="table table-striped">
@@ -136,7 +144,7 @@
       </tr>
       <tr *ngFor="let item of moviesDB">
         <td>{{item.title}}</td>
-        <td>{{item.mYear}}</td>
+        <td>{{item.year}}</td>
       </tr>
     </table>
   </div>

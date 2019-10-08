@@ -16,7 +16,7 @@ export class ActorComponent implements OnInit {
   //movie
   moviesDB: any[] = [];
   title: string = "";
-  mYear: number = 0;
+  year: number = 0;
   movieId: string = "";
 
   aYear: number = 0;
@@ -70,7 +70,7 @@ export class ActorComponent implements OnInit {
 
   //Task 1: Add Movie
   onSaveMovie() {
-    let obj = { title: this.title, year: this.mYear };
+    let obj = { title: this.title, year: this.year };
     this.dbService.createMovie(obj).subscribe(result => {
       this.onGetMovies();
     });
@@ -102,7 +102,7 @@ export class ActorComponent implements OnInit {
 
     //MOVIE
     this.title = "";
-    this.mYear = 0;
+    this.year = 0;
     this.movieId = ";"
   }
 
