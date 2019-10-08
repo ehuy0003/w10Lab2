@@ -9,6 +9,8 @@ const httpOptions = {
 export class DatabaseService {
   constructor(private http: HttpClient) {}
   result: any;
+
+  //ACTORS
   getActors() {
     return this.http.get("/actors");
   }
@@ -27,4 +29,17 @@ export class DatabaseService {
     let url = "/actors/" + id;
     return this.http.delete(url, httpOptions);
   }
+
+  //MOVIES
+  getMovies() {
+    return this.http.get("/movies");
+  }
+  createMovie(data) {
+    return this.http.post("/movies", data, httpOptions);
+  }
+  deleteMovie(id) {
+    let url = "/movies/" + id;
+    return this.http.delete(url, httpOptions);
+  }
+
 }
